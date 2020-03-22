@@ -1,4 +1,4 @@
-namespace ProductCatalogService.EventFeed.Models.Configurations
+namespace ProductCatalogService.Models.Configurations
 {
     public static class StorageOption
     {

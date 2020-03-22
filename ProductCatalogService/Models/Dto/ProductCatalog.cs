@@ -1,4 +1,4 @@
-namespace ProductCatalogService.ProductCatalog.Models.Dto
+namespace ProductCatalogService.Models.Dto
 {
     public class ProductCatalogResponse
     {

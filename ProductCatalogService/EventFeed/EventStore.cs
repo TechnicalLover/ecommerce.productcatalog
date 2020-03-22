@@ -1,6 +1,6 @@
 namespace ProductCatalogService.EventFeed
 {
-    using ProductCatalogService.EventFeed.Models.Configurations;
+    using ProductCatalogService.Models.Configurations;
 
     public class EventStore : IEventStore
     {

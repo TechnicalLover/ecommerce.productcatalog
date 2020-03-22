@@ -1,6 +1,6 @@
 namespace ProductCatalogService.ProductCatalog
 {
-    using ProductCatalogService.ProductCatalog.Models.Configurations;
+    using ProductCatalogService.Models.Configurations;
 
     public class ProductCatalogStore : IProductCatalogStore
     {
