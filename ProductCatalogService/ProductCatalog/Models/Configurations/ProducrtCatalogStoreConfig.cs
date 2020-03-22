@@ -1,4 +1,4 @@
-namespace ProductCatalogService.ProductCatalog.Configurations
+namespace ProductCatalogService.ProductCatalog.Models.Configurations
 {
     public class ProductCatalogStoreConfig
     {

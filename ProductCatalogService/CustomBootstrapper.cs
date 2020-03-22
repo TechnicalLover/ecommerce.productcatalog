@@ -10,9 +10,9 @@ namespace ProductCatalogService
     using Nancy.Configuration;
     using Nancy.Responses.Negotiation;
     using ProductCatalogService.EventFeed;
-    using ProductCatalogService.EventFeed.Configurations;
+    using ProductCatalogService.EventFeed.Models.Configurations;
     using ProductCatalogService.ProductCatalog;
-    using ProductCatalogService.ProductCatalog.Configurations;
+    using ProductCatalogService.ProductCatalog.Models.Configurations;
 
     public class CustomBootstrapper : AutofacNancyBootstrapper
     {
