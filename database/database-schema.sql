@@ -1,53 +1,40 @@
 USE master
 GO
 
--- Create a new database called 'ecommerce_masterdata'
--- Connect to the 'master' database to run this snippet
 USE master
 GO
 -- Create the new database if it does not exist already
 IF NOT EXISTS (
     SELECT name
 FROM [sys].[databases]
-WHERE name = N'ecommerce_masterdata'
+WHERE name = N'ecommerce_productcatalog_database'
 )
-CREATE DATABASE ecommerce_masterdata
+CREATE DATABASE ecommerce_productcatalog_database
 GO
 
-USE [ecommerce_masterdata]
+USE [ecommerce_productcatalog_database]
 GO
 
--- Create a new table called 'shopping_cart' in schema 'SchemaName'
 -- Drop the table if it already exists
-IF OBJECT_ID('dbo.shopping_cart', 'U') IS NOT NULL
-DROP TABLE [dbo].[shopping_cart]
+IF OBJECT_ID('dbo.product', 'U') IS NOT NULL
+DROP TABLE [dbo].[product]
 GO
 -- Create the table in the specified schema
-CREATE TABLE [dbo].[shopping_cart]
+CREATE TABLE [dbo].[product]
 (
     [ID] INT IDENTITY(1,1) PRIMARY KEY,
     -- primary key column
-    [UserId] INT NOT NULL
+    [ProductName] NVARCHAR(400) NOT NULL,
+    [DivisionCode] INT NOT NULL,
+    [DivisionName] NVARCHAR(100) NOT NULL,
+    [CategoryCode] INT NOT NULL,
+    [CategoryName] NVARCHAR(100) NOT NULL,
+    [Description] NVARCHAR(500) NOT NULL,
+    [ImageUrl] NVARCHAR(500) NOT NULL
     -- specify more columns here
 );
 GO
 
-CREATE INDEX shoppingcart_userid
-ON [dbo].[shopping_cart] (UserId)
-GO
-
-ALTER TABLE [dbo].[shopping_cart_items]  WITH CHECK ADD CONSTRAINT [FK_ShoppingCart] FOREIGN KEY([ShoppingCartId])
-REFERENCES [dbo].[shopping_cart] ([ID])
-GO
-
-ALTER TABLE [dbo].[shopping_cart_items] CHECK CONSTRAINT [FK_ShoppingCart]
-GO
-
-CREATE INDEX shoppingcartitems_shoppingcartid
-ON [dbo].[shopping_cart_items] (ShoppingCartId)
-GO
-
--- Create a new table called 'event_store' in schema 'dbo'
 -- Drop the table if it already exists
 IF OBJECT_ID('dbo.event_store', 'U') IS NOT NULL
 DROP TABLE [dbo].[event_store]

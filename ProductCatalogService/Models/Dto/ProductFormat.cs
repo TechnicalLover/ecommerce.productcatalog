@@ -2,17 +2,17 @@ namespace ProductCatalogService.Models.Dto
 {
     using System.Linq;
 
-    public class ProductFormatResponse
+    public class ProductFormat
     {
-        public int FormatCode { get; set; }
+        public int Id { get; set; }
 
         public string FormatName { get; set; }
 
-        public ProductUnitResponse Unit { get; set; }
+        public ProductUnit Unit { get; set; }
 
-        public ProductPriceResponse[] Prices { get; set; }
+        public ProductPrice[] Prices { get; set; }
 
-        public ProductPriceResponse GetRetailerPrice()
+        public ProductPrice GetRetailerPrice()
         {
             return Prices.First(p => p.PriceGroupCode == 1);
         }

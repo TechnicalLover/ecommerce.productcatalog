@@ -1,8 +1,8 @@
 namespace ProductCatalogService.Models.Dto
 {
-    public class ProductUnitResponse
+    public class ProductUnit
     {
-        public int UnitCode { get; set; }
+        public int Id { get; set; }
 
         public string UnitName { get; set; }
 

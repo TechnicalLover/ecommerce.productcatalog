@@ -1,8 +1,8 @@
 namespace ProductCatalogService.Models.Dto
 {
-    public class ProductPriceResponse
+    public class ProductPrice
     {
-        public int PriceCode { get; set; }
+        public int Id { get; set; }
 
         public string PriceName { get; set; }
 

@@ -1,10 +1,10 @@
 namespace ProductCatalogService.Models.Dto
 {
-    public class ProductCatalogResponse
+    public class ProductCatalog
     {
-        public int ProductItemCode { get; set; }
+        public int Id { get; set; }
 
-        public string ProductItemName { get; set; }
+        public string ProductName { get; set; }
 
         public int DivisionCode { get; set; }
 
@@ -18,26 +18,10 @@ namespace ProductCatalogService.Models.Dto
 
         public string ImageUrl { get; set; }
 
-        public ProductFormatResponse CaseFormat { get; set; }
+        public ProductFormat CaseFormat { get; set; }
 
-        public ProductFormatResponse BundleFormat { get; set; }
+        public ProductFormat BundleFormat { get; set; }
 
-        public ProductFormatResponse UpcFormat { get; set; }
-
-        public ProductFormatResponse GetFormat(int unitCode)
-        {
-            if (BundleFormat.Unit.UnitCode == unitCode)
-            {
-                return BundleFormat;
-            }
-
-            if (UpcFormat.Unit.UnitCode == unitCode)
-            {
-                return UpcFormat;
-            }
-
-            // if unitCode is not valid, return CaseFormat by default
-            return CaseFormat;
-        }
+        public ProductFormat UpcFormat { get; set; }
     }
 }
